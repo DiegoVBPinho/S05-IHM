@@ -30,8 +30,6 @@ body {
     background-color: #8f8f8f;
 }
 
-
-
 .mensagens {
     padding: 16px;
     background-color: #EAD1DC;
@@ -68,6 +66,10 @@ body {
     padding: 16px;
     border: 2px solid #000;
     /* Adiciona uma borda */
+    display: flex;
+    /* Alinha as caixinhas lado a lado */
+    gap: 16px;
+    /* Adiciona um espaço entre as caixinhas */
 }
 
 .aula {
@@ -77,6 +79,8 @@ body {
     border-radius: 8px;
     border: 2px solid #000;
     /* Adiciona uma borda */
+    flex: 1;
+    /* Faz com que as caixinhas ocupem o mesmo espaço */
 }
 
 .noticias {
