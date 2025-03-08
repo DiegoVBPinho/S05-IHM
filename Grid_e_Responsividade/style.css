@@ -76,6 +76,7 @@ body {
 
 /* ÍCONES DAS AULAS */
 .aulaicons {
+    background-color: #c0e9b1;
     display: flex;
     justify-content: flex-end;
     gap: 8px;
