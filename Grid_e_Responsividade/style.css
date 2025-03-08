@@ -91,12 +91,12 @@ body {
 }
 
 .aulaicons {
-    background-color: #c0e9b1;
+    background-color: #49e70f;
     /* Verde claro para manter unidade visual */
     padding: 8px;
     /* Adiciona uma borda */
     display: flex;
-    justify-content: center;
+    justify-content: left;
     gap: 16px;
     width: 33%;
 
@@ -117,4 +117,28 @@ body {
     border-radius: 8px;
     border: 2px solid #000;
     /* Adicionei uma borda */
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 480px) {
+    .container {
+        padding: 8px;
+    }
+
+    .aula {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .aulaicons {
+        width: 50%;
+        justify-content: flex-start;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
+    }
 }
