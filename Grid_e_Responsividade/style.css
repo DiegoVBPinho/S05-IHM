@@ -6,6 +6,7 @@ body {
     background-color: #f0f0f0;
 }
 
+/* CONTAINER PRINCIPAL */
 .container {
     width: 414px;
     display: flex;
@@ -13,14 +14,13 @@ body {
     gap: 16px;
 }
 
+/* HEADER */
 .header {
     display: flex;
     justify-content: space-between;
     padding: 16px;
     background-color: #FFF2CC;
-    /* Amarelo claro */
     border: 2px solid #000;
-    /* Adiciona borda */
 }
 
 .icon,
@@ -30,114 +30,119 @@ body {
     background-color: #8f8f8f;
 }
 
-
-
+/* MENSAGENS */
 .mensagens {
     padding: 16px;
     background-color: #EAD1DC;
-    /* Rosa claro */
     display: flex;
     flex-direction: column;
     gap: 8px;
     border: 2px solid #000;
-    /* Adiciona borda */
 }
 
 .mensagem {
     background-color: #e4a7c1;
-    /* Rosa claro para manter unidade visual */
     padding: 8px;
     border-radius: 8px;
     display: flex;
     align-items: center;
     gap: 8px;
     border: 2px solid #000;
-    /* Adiciona uma borda */
 }
 
-.quadrado {
-    width: 16px;
-    height: 16px;
-    background-color: #ccc;
-    border-radius: 4px;
-}
-
+/* AULAS */
 .aulas {
     background-color: #D9EAD3;
-    /* Verde claro */
     padding: 16px;
     border: 2px solid #000;
     display: flex;
     flex-direction: column;
     gap: 8px;
-
-    /* Adiciona uma borda */
-
 }
 
-
-
-
+/* ESTILO DAS AULAS */
 .aula {
     background-color: #c0e9b1;
-    /* Verde claro para manter unidade visual */
     padding: 8px;
     border-radius: 8px;
     border: 2px solid #000;
     display: flex;
-    justify-content: center;
-    gap: 130px;
-    /* Adiciona uma borda */
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    /* Garante que nada quebre para baixo */
 }
 
+/* ÍCONES DAS AULAS */
 .aulaicons {
-    background-color: #49e70f;
-    /* Verde claro para manter unidade visual */
-    padding: 8px;
-    /* Adiciona uma borda */
     display: flex;
-    justify-content: left;
-    gap: 16px;
-    width: 33%;
-
+    justify-content: flex-end;
+    gap: 8px;
+    flex-wrap: nowrap;
+    min-width: 120px;
+    max-width: 150px;
+    overflow-x: auto;
+    /* Adiciona rolagem horizontal se necessário */
+    padding-bottom: 4px;
+    /* Evita que a rolagem fique cortada */
+    white-space: nowrap;
 }
 
+/* NOTÍCIAS */
 .noticias {
     background-color: #F4CCCC;
-    /* Vermelho claro */
     padding: 16px;
     border: 2px solid #000;
-    /* Adiciona uma borda */
 }
 
 .card-noticia {
     background-color: #ebafaf;
-    /* Vermelho claro para manter unidade visual */
     padding: 16px;
     border-radius: 8px;
     border: 2px solid #000;
-    /* Adicionei uma borda */
 }
 
-/* RESPONSIVIDADE */
+/* 🔥 RESPONSIVIDADE 🔥 */
+
+/* TELAS PEQUENAS (CELULARES PEQUENOS) */
 @media (max-width: 480px) {
     .container {
+        width: 100%;
         padding: 8px;
     }
 
     .aula {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
         gap: 8px;
     }
 
     .aulaicons {
-        width: 50%;
         justify-content: flex-start;
+        overflow-x: auto;
     }
 }
 
-@media (min-width: 768px) {
+/* TELAS MÉDIAS (TABLETS) */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .container {
+        max-width: 80%;
+    }
+
+    .aula {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .aulaicons {
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+    }
+}
+
+/* TELAS GRANDES (DESKTOP OU PAISAGEM) */
+@media (min-width: 1025px) {
     .container {
         max-width: 600px;
     }
