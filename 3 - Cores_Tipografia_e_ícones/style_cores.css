@@ -1,9 +1,14 @@
+/* Importando a fonte "Arimo" */
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
+
 body {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     background-color: #f0f0f0;
+    font-family: 'Arimo', sans-serif;
+    /* Definindo a fonte Arimo para todo o corpo */
 }
 
 /* CONTAINER PRINCIPAL */
@@ -22,18 +27,38 @@ body {
     background-color: #0442BF;
     /* Cor azul ajustada */
     border: none;
-    /* Remover borda */
+    align-items: center;
+    /* Alinha o conteúdo no centro verticalmente */
 }
 
-/* ÍCONES E LOGO */
-.icon,
+/* LOGO - Ajusta o texto para ficar em uma linha e na cor branca */
 .logo {
+    font-size: 24px;
+    /* Tamanho do texto */
+    font-weight: bold;
+    color: white;
+    /* Cor do texto ajustada para branco */
+    text-transform: uppercase;
+    /* Transforma o texto em maiúsculo */
+    margin: 0;
+    /* Remove qualquer margem que possa afetar o alinhamento */
+}
+
+/* ÍCONES */
+.icon {
     width: 40px;
+    /* Tamanho do ícone reduzido */
     height: 40px;
     background-color: transparent;
-    /* Remover fundo dos ícones */
+    /* Remover fundo */
     border: none;
-    /* Remover qualquer borda */
+    color: white;
+    /* Cor dos ícones em branco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    /* Tamanho do ícone ajustado para 24px */
 }
 
 /* MENSAGENS */
