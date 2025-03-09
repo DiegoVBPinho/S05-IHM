@@ -1,12 +1,23 @@
+/* Definições de cores para o tema claro e escuro */
+:root {
+    --primary-color: #005ca3;
+    /* Azul Inatel */
+    --secondary-color: #f0f0f0;
+    /* Cor de fundo */
+    --text-color-light: #333;
+    --text-color-dark: #fff;
+    --bg-light: #f0f0f0;
+    --bg-dark: #333;
+}
+
 body {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
 }
 
-/* CONTAINER PRINCIPAL */
 .container {
     width: 414px;
     display: flex;
@@ -14,7 +25,6 @@ body {
     gap: 16px;
 }
 
-/* HEADER */
 .header {
     display: flex;
     justify-content: space-between;
@@ -30,7 +40,6 @@ body {
     background-color: #8f8f8f;
 }
 
-/* MENSAGENS */
 .mensagens {
     padding: 16px;
     background-color: #EAD1DC;
@@ -50,7 +59,6 @@ body {
     border: 2px solid #000;
 }
 
-/* AULAS */
 .aulas {
     background-color: #D9EAD3;
     padding: 16px;
@@ -60,7 +68,6 @@ body {
     gap: 8px;
 }
 
-/* ESTILO DAS AULAS */
 .aula {
     background-color: #c0e9b1;
     padding: 8px;
@@ -71,26 +78,20 @@ body {
     align-items: center;
     gap: 8px;
     flex-wrap: nowrap;
-    /* Garante que nada quebre para baixo */
 }
 
-/* ÍCONES DAS AULAS */
 .aulaicons {
     background-color: #c0e9b1;
     display: flex;
     justify-content: flex-end;
     gap: 8px;
-    flex-wrap: nowrap;
     min-width: 120px;
     max-width: 150px;
     overflow-x: auto;
-    /* Adiciona rolagem horizontal se necessário */
     padding-bottom: 4px;
-    /* Evita que a rolagem fique cortada */
     white-space: nowrap;
 }
 
-/* NOTÍCIAS */
 .noticias {
     background-color: #F4CCCC;
     padding: 16px;
@@ -104,47 +105,50 @@ body {
     border: 2px solid #000;
 }
 
-/* RESPONSIVIDADE */
+/* Modo Claro */
+body.light-mode {
+    background-color: var(--bg-light);
+    color: var(--text-color-light);
+}
 
-/* TELAS PEQUENAS (CELULARES PEQUENOS) */
+/* Modo Escuro */
+body.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-color-dark);
+}
+
+/* Responsividade */
 @media (max-width: 480px) {
     .container {
         width: 100%;
         padding: 8px;
     }
-
-    .aula {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-    }
-
-    .aulaicons {
-        justify-content: flex-start;
-        overflow-x: auto;
-    }
 }
 
-/* TELAS MÉDIAS (TABLETS) */
 @media (min-width: 481px) and (max-width: 1024px) {
     .container {
         max-width: 80%;
     }
-
-    .aula {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .aulaicons {
-        flex-wrap: nowrap;
-        justify-content: flex-end;
-    }
 }
 
-/* TELAS GRANDES (DESKTOP OU PAISAGEM) */
 @media (min-width: 1025px) {
     .container {
         max-width: 600px;
     }
+}
+
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #000;
+}
+
+.theme-toggle button {
+    margin: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
 }
