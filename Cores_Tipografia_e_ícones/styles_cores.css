@@ -1,13 +1,19 @@
 /* Definições de cores para o tema claro e escuro */
 :root {
-    --primary-color: #005ca3;
+    --primary-color: #005CA3;
     /* Azul Inatel */
-    --secondary-color: #f0f0f0;
-    /* Cor de fundo */
-    --text-color-light: #333;
-    --text-color-dark: #fff;
-    --bg-light: #f0f0f0;
-    --bg-dark: #333;
+    --text-color-light: #333333;
+    /* Texto para o modo claro */
+    --text-color-dark: #FFFFFF;
+    /* Texto para o modo escuro */
+    --bg-light: #FFFFFF;
+    /* Fundo Claro */
+    --bg-dark: #333333;
+    /* Fundo Escuro */
+    --border-color: #D1D3D4;
+    /* Bordas claras */
+    --highlight-color: #005CA3;
+    /* Cor de destaque - Azul */
 }
 
 body {
@@ -29,8 +35,8 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 16px;
-    background-color: #FFF2CC;
-    border: 2px solid #000;
+    background-color: var(--primary-color);
+    border: 2px solid var(--border-color);
 }
 
 .icon,
@@ -42,113 +48,39 @@ body {
 
 .mensagens {
     padding: 16px;
-    background-color: #EAD1DC;
+    background-color: #F4F6F7;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    border: 2px solid #000;
+    border: 2px solid var(--border-color);
 }
 
 .mensagem {
-    background-color: #e4a7c1;
+    background-color: #F1F1F1;
     padding: 8px;
     border-radius: 8px;
     display: flex;
     align-items: center;
     gap: 8px;
-    border: 2px solid #000;
+    border: 2px solid var(--border-color);
 }
 
 .aulas {
-    background-color: #D9EAD3;
+    background-color: #F4F6F7;
     padding: 16px;
-    border: 2px solid #000;
+    border: 2px solid var(--border-color);
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
 .aula {
-    background-color: #c0e9b1;
+    background-color: #D9EAF7;
     padding: 8px;
     border-radius: 8px;
-    border: 2px solid #000;
+    border: 2px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 8px;
-    flex-wrap: nowrap;
-}
 
-.aulaicons {
-    background-color: #c0e9b1;
-    display: flex;
-    justify-content: flex-end;
-    gap: 8px;
-    min-width: 120px;
-    max-width: 150px;
-    overflow-x: auto;
-    padding-bottom: 4px;
-    white-space: nowrap;
-}
-
-.noticias {
-    background-color: #F4CCCC;
-    padding: 16px;
-    border: 2px solid #000;
-}
-
-.card-noticia {
-    background-color: #ebafaf;
-    padding: 16px;
-    border-radius: 8px;
-    border: 2px solid #000;
-}
-
-/* Modo Claro */
-body.light-mode {
-    background-color: var(--bg-light);
-    color: var(--text-color-light);
-}
-
-/* Modo Escuro */
-body.dark-mode {
-    background-color: var(--bg-dark);
-    color: var(--text-color-dark);
-}
-
-/* Responsividade */
-@media (max-width: 480px) {
-    .container {
-        width: 100%;
-        padding: 8px;
-    }
-}
-
-@media (min-width: 481px) and (max-width: 1024px) {
-    .container {
-        max-width: 80%;
-    }
-}
-
-@media (min-width: 1025px) {
-    .container {
-        max-width: 600px;
-    }
-}
-
-.theme-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    border: 2px solid #000;
-}
-
-.theme-toggle button {
-    margin: 5px;
-    padding: 8px 16px;
-    cursor: pointer;
 }
