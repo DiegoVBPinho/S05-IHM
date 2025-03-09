@@ -1,19 +1,51 @@
-/* Definições de cores para o tema claro e escuro */
+/* Definições de cores para os temas */
 :root {
-    --primary-color: #005CA3;
+    --primary-color-inatel: #005CA3;
     /* Azul Inatel */
-    --text-color-light: #333333;
+    --secondary-color-inatel: #015294;
+    /* Botões Inatel */
+    --text-color-light: #000000;
     /* Texto para o modo claro */
     --text-color-dark: #FFFFFF;
     /* Texto para o modo escuro */
     --bg-light: #FFFFFF;
-    /* Fundo Claro */
+    /* Fundo claro */
     --bg-dark: #333333;
-    /* Fundo Escuro */
-    --border-color: #D1D3D4;
-    /* Bordas claras */
+    /* Fundo escuro */
     --highlight-color: #005CA3;
     /* Cor de destaque - Azul */
+    --border-color: #D1D3D4;
+    /* Bordas claras */
+}
+
+/* Tema do Inatel */
+.theme-inatel {
+    --bg-light: #0068BD;
+    /* Fundo claro Inatel */
+    --bg-dark: #003C75;
+    /* Fundo escuro Inatel */
+    --text-color-light: #FFFFFF;
+    /* Texto claro em fundo escuro */
+    --text-color-dark: #FFFFFF;
+    /* Texto escuro em fundo claro */
+    --primary-color: var(--primary-color-inatel);
+    --secondary-color: var(--secondary-color-inatel);
+}
+
+/* Tema Preto e Branco */
+.theme-black-white {
+    --bg-light: #FFFFFF;
+    /* Fundo claro preto e branco */
+    --bg-dark: #000000;
+    /* Fundo escuro preto e branco */
+    --text-color-light: #000000;
+    /* Texto claro preto e branco */
+    --text-color-dark: #FFFFFF;
+    /* Texto escuro preto e branco */
+    --primary-color: #000000;
+    /* Cor primária preta */
+    --secondary-color: #FFFFFF;
+    /* Cor secundária branca */
 }
 
 body {
@@ -22,6 +54,20 @@ body {
     display: flex;
     justify-content: center;
     font-family: 'Arial', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-color-light);
+}
+
+/* Tema Claro */
+body.light-mode {
+    background-color: var(--bg-light);
+    color: var(--text-color-light);
+}
+
+/* Tema Escuro */
+body.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-color-dark);
 }
 
 .container {
@@ -82,5 +128,23 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
 
+#theme-toggle {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: var(--secondary-color);
+    color: var(--text-color-dark);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
 }

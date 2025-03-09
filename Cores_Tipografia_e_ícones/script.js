@@ -5,8 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Verifica o tema salvo no localStorage
     if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark-mode");
+        document.body.classList.remove("light-mode");
     } else {
         document.body.classList.add("light-mode");
+        document.body.classList.remove("dark-mode");
     }
 
     // Alternar para o modo escuro
