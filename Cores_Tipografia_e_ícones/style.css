@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #f0f0f0;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+    width: 414px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #FFF2CC;
+    border: 2px solid #000;
+}
+
+.icon,
+.logo {
+    width: 40px;
+    height: 40px;
+    background-color: #8f8f8f;
+}
+
+/* MENSAGENS */
+.mensagens {
+    padding: 16px;
+    background-color: #EAD1DC;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 2px solid #000;
+}
+
+.mensagem {
+    background-color: #e4a7c1;
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid #000;
+}
+
+/* AULAS */
+.aulas {
+    background-color: #D9EAD3;
+    padding: 16px;
+    border: 2px solid #000;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ESTILO DAS AULAS */
+.aula {
+    background-color: #c0e9b1;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    /* Garante que nada quebre para baixo */
+}
+
+/* ÍCONES DAS AULAS */
+.aulaicons {
+    background-color: #c0e9b1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-wrap: nowrap;
+    min-width: 120px;
+    max-width: 150px;
+    overflow-x: auto;
+    /* Adiciona rolagem horizontal se necessário */
+    padding-bottom: 4px;
+    /* Evita que a rolagem fique cortada */
+    white-space: nowrap;
+}
+
+/* NOTÍCIAS */
+.noticias {
+    background-color: #F4CCCC;
+    padding: 16px;
+    border: 2px solid #000;
+}
+
+.card-noticia {
+    background-color: #ebafaf;
+    padding: 16px;
+    border-radius: 8px;
+    border: 2px solid #000;
+}
+
+/* RESPONSIVIDADE */
+
+/* TELAS PEQUENAS (CELULARES PEQUENOS) */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .aula {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .aulaicons {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+}
+
+/* TELAS MÉDIAS (TABLETS) */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .container {
+        max-width: 80%;
+    }
+
+    .aula {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .aulaicons {
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+    }
+}
+
+/* TELAS GRANDES (DESKTOP OU PAISAGEM) */
+@media (min-width: 1025px) {
+    .container {
+        max-width: 600px;
+    }
+}
