@@ -1,51 +1,12 @@
-/* Definições de cores para os temas */
+/* Definições de cores para o tema claro e escuro */
 :root {
-    --primary-color-inatel: #005CA3;
-    /* Azul Inatel */
-    --secondary-color-inatel: #015294;
-    /* Botões Inatel */
-    --text-color-light: #000000;
-    /* Texto para o modo claro */
+    --primary-color: #005CA3;
+    --text-color-light: #333333;
     --text-color-dark: #FFFFFF;
-    /* Texto para o modo escuro */
     --bg-light: #FFFFFF;
-    /* Fundo claro */
     --bg-dark: #333333;
-    /* Fundo escuro */
-    --highlight-color: #005CA3;
-    /* Cor de destaque - Azul */
     --border-color: #D1D3D4;
-    /* Bordas claras */
-}
-
-/* Tema do Inatel */
-.theme-inatel {
-    --bg-light: #0068BD;
-    /* Fundo claro Inatel */
-    --bg-dark: #003C75;
-    /* Fundo escuro Inatel */
-    --text-color-light: #FFFFFF;
-    /* Texto claro em fundo escuro */
-    --text-color-dark: #FFFFFF;
-    /* Texto escuro em fundo claro */
-    --primary-color: var(--primary-color-inatel);
-    --secondary-color: var(--secondary-color-inatel);
-}
-
-/* Tema Preto e Branco */
-.theme-black-white {
-    --bg-light: #FFFFFF;
-    /* Fundo claro preto e branco */
-    --bg-dark: #000000;
-    /* Fundo escuro preto e branco */
-    --text-color-light: #000000;
-    /* Texto claro preto e branco */
-    --text-color-dark: #FFFFFF;
-    /* Texto escuro preto e branco */
-    --primary-color: #000000;
-    /* Cor primária preta */
-    --secondary-color: #FFFFFF;
-    /* Cor secundária branca */
+    --highlight-color: #005CA3;
 }
 
 body {
@@ -54,20 +15,6 @@ body {
     display: flex;
     justify-content: center;
     font-family: 'Arial', sans-serif;
-    background-color: var(--bg-light);
-    color: var(--text-color-light);
-}
-
-/* Tema Claro */
-body.light-mode {
-    background-color: var(--bg-light);
-    color: var(--text-color-light);
-}
-
-/* Tema Escuro */
-body.dark-mode {
-    background-color: var(--bg-dark);
-    color: var(--text-color-dark);
 }
 
 .container {
@@ -80,16 +27,30 @@ body.dark-mode {
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 16px;
     background-color: var(--primary-color);
     border: 2px solid var(--border-color);
 }
 
-.icon,
+.icon {
+    font-size: 24px;
+    color: var(--text-color-dark);
+    cursor: pointer;
+}
+
+.menu-icon {
+    font-size: 30px;
+}
+
 .logo {
-    width: 40px;
-    height: 40px;
-    background-color: #8f8f8f;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-color-dark);
+}
+
+.notification-icon {
+    font-size: 24px;
 }
 
 .mensagens {
@@ -138,7 +99,7 @@ body.dark-mode {
 
 button {
     padding: 8px 16px;
-    background-color: var(--secondary-color);
+    background-color: var(--highlight-color);
     color: var(--text-color-dark);
     border: none;
     border-radius: 4px;
