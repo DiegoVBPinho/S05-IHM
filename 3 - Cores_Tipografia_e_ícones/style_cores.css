@@ -1,4 +1,3 @@
-/* Importando a fonte "Arimo" */
 @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
 
 body {
@@ -6,73 +5,84 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    background-color: #f0f0f0;
-    font-family: 'Arimo', sans-serif;
-    /* Definindo a fonte Arimo para todo o corpo */
+    font-family: 'Arimo';
+    background-image: url('inatel.svg');
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: black;
+    position: relative;
 }
 
-/* CONTAINER PRINCIPAL */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    opacity: 0.5;
+    z-index: -1;
+    /* PEDIU PARA COLOCAR NO FUNDO */
+}
+
 .container {
     width: 414px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 8px;
+    border: 2px solid #000;
 }
 
-/* HEADER */
+/* TROCADO OS ICONES E CORES */
+
 .header {
     display: flex;
     justify-content: space-between;
     padding: 16px;
     background-color: #0442BF;
-    /* Cor azul ajustada */
     border: none;
     align-items: center;
-    /* Alinha o conteúdo no centro verticalmente */
 }
 
-/* LOGO - Ajusta o texto para ficar em uma linha e na cor branca */
+/* TROCADO OS ICONES E CORES */
+
+
 .logo {
     font-size: 24px;
-    /* Tamanho do texto */
     font-weight: bold;
     color: white;
-    /* Cor do texto ajustada para branco */
     text-transform: uppercase;
-    /* Transforma o texto em maiúsculo */
     margin: 0;
-    /* Remove qualquer margem que possa afetar o alinhamento */
 }
 
-/* ÍCONES */
+/* ALTERADO NOME DO APP */
+
 .icon {
     width: 40px;
-    /* Tamanho do ícone reduzido */
     height: 40px;
     background-color: transparent;
-    /* Remover fundo */
     border: none;
     color: white;
-    /* Cor dos ícones em branco */
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    /* Tamanho do ícone ajustado para 24px */
 }
 
-/* MENSAGENS */
 .mensagens {
     padding: 16px;
-    background-color: #EAD1DC;
+    background-color: #c7c7c7;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    border: 2px solid #000;
+    border: 1px solid #000;
 }
 
 .mensagem {
-    background-color: #e4a7c1;
+    background-color: #b7b7b7;
     padding: 8px;
     border-radius: 8px;
     display: flex;
@@ -81,19 +91,20 @@ body {
     border: 2px solid #000;
 }
 
-/* AULAS */
+/* FOI CRIADO UM PADRÃO DE CORES PADRÃO DIFERENTE DO MODO INATEL OU DARK */
+
+
 .aulas {
-    background-color: #D9EAD3;
+    background-color: #c7c7c7;
     padding: 16px;
-    border: 2px solid #000;
+    border: 1px solid #000;
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-/* ESTILO DAS AULAS */
 .aula {
-    background-color: #c0e9b1;
+    background-color: #b7b7b7;
     padding: 8px;
     border-radius: 8px;
     border: 2px solid #000;
@@ -101,81 +112,143 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 8px;
-    flex-wrap: nowrap;
-    /* Garante que nada quebre para baixo */
 }
 
-/* ÍCONES DAS AULAS */
+/* FOI CRIADO UM PADRÃO DE CORES PADRÃO DIFERENTE DO MODO INATEL OU DARK */
+
+
 .aulaicons {
-    background-color: #c0e9b1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 8px;
     flex-wrap: nowrap;
     min-width: 120px;
     max-width: 150px;
-    overflow-x: auto;
-    /* Adiciona rolagem horizontal se necessário */
     padding-bottom: 4px;
-    /* Evita que a rolagem fique cortada */
-    white-space: nowrap;
 }
 
-/* NOTÍCIAS */
 .noticias {
-    background-color: #F4CCCC;
+    background-color: #c7c7c7;
     padding: 16px;
-    border: 2px solid #000;
+    border: 1px solid #000;
 }
+
+/* FOI CRIADO UM PADRÃO DE CORES PADRÃO DIFERENTE DO MODO INATEL OU DARK */
 
 .card-noticia {
-    background-color: #ebafaf;
+    background-color: #b7b7b7;
     padding: 16px;
     border-radius: 8px;
     border: 2px solid #000;
+    margin-bottom: 8px;
 }
 
-/* RESPONSIVIDADE */
-
-/* TELAS PEQUENAS (CELULARES PEQUENOS) */
-@media (max-width: 480px) {
-    .container {
-        width: 100%;
-        padding: 8px;
-    }
-
-    .aula {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-    }
-
-    .aulaicons {
-        justify-content: flex-start;
-        overflow-x: auto;
-    }
+/* DARK MODE */
+body.dark-mode {
+    background-color: #333;
+    color: white;
 }
 
-/* TELAS MÉDIAS (TABLETS) */
-@media (min-width: 481px) and (max-width: 1024px) {
-    .container {
-        max-width: 80%;
-    }
-
-    .aula {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .aulaicons {
-        flex-wrap: nowrap;
-        justify-content: flex-end;
-    }
+body.dark-mode .mensagens {
+    background-color: #555;
 }
 
-/* TELAS GRANDES (DESKTOP OU PAISAGEM) */
-@media (min-width: 1025px) {
-    .container {
-        max-width: 600px;
-    }
+body.dark-mode .mensagem {
+    background-color: #666;
+}
+
+body.dark-mode .aulas {
+    background-color: #555;
+}
+
+body.dark-mode .aula {
+    background-color: #666;
+}
+
+body.dark-mode .noticias {
+    background-color: #444;
+}
+
+body.dark-mode .card-noticia {
+    background-color: #555;
+}
+
+/* INATEL MODE */
+
+body.inatel-tema {
+    color: white;
+}
+
+body.inatel-tema .mensagens {
+    background-color: #0477BF;
+}
+
+body.inatel-tema .mensagem {
+    background-color: #0442BF;
+}
+
+body.inatel-tema .aulas {
+    background-color: #0477BF;
+}
+
+body.inatel-tema .aula {
+    background-color: #0442BF;
+}
+
+body.inatel-tema .noticias {
+    background-color: #0477BF;
+}
+
+body.inatel-tema .card-noticia {
+    background-color: #0442BF;
+}
+
+.menu-tema {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 1000;
+    border: 1px solid #000;
+    background-color: #A3C8F7;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.menu-tema button {
+    padding: 8px 16px;
+    background-color: #0442BF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.menu-tema button:hover {
+    background-color: #033a94;
+}
+
+.botao-tema {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #0442BF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #033a94;
 }
