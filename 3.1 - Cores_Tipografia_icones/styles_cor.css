@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'Arimo';
+    background-image: url('inatel.svg');
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: black;
+    position: relative;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    opacity: 0.5;
+    z-index: -1;
+    /* PEDIU PARA COLOCAR NO FUNDO */
+}
+
+.container {
+    width: 414px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 2px solid #000;
+}
+
+/* TROCADO OS ICONES E CORES */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #0442BF;
+    border: none;
+    align-items: center;
+}
+
+/* TROCADO OS ICONES E CORES */
+
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* ALTERADO NOME DO APP */
+
+.icon {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.mensagens {
+    padding: 16px;
+    background-color: #c7c7c7;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid #000;
+}
+
+.mensagem {
+    background-color: #b7b7b7;
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid #000;
+}
+
+/* FOI CRIADO UM PADRÃO DE CORES PADRÃO DIFERENTE DO MODO INATEL OU DARK */
+
+
+.aulas {
+    background-color: #c7c7c7;
+    padding: 16px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.aula {
+    background-color: #b7b7b7;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+/* FOI CRIADO UM PADRÃO DE CORES PADRÃO DIFERENTE DO MODO INATEL OU DARK */
+
+
+.aulaicons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    flex-wrap: nowrap;
+    min-width: 120px;
+    max-width: 150px;
+    padding-bottom: 4px;
+}
+
+.noticias {
+    background-color: #c7c7c7;
+    padding: 16px;
+    border: 1px solid #000;
+}
+
+/* FOI CRIADO UM PADRÃO DE CORES PADRÃO DIFERENTE DO MODO INATEL OU DARK */
+
+.card-noticia {
+    background-color: #b7b7b7;
+    padding: 16px;
+    border-radius: 8px;
+    border: 2px solid #000;
+    margin-bottom: 8px;
+}
+
+/* DARK MODE */
+body.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode .mensagens {
+    background-color: #555;
+}
+
+body.dark-mode .mensagem {
+    background-color: #666;
+}
+
+body.dark-mode .aulas {
+    background-color: #555;
+}
+
+body.dark-mode .aula {
+    background-color: #666;
+}
+
+body.dark-mode .noticias {
+    background-color: #444;
+}
+
+body.dark-mode .card-noticia {
+    background-color: #555;
+}
+
+/* INATEL MODE */
+
+body.inatel-tema {
+    color: white;
+}
+
+body.inatel-tema .mensagens {
+    background-color: #0477BF;
+}
+
+body.inatel-tema .mensagem {
+    background-color: #0442BF;
+}
+
+body.inatel-tema .aulas {
+    background-color: #0477BF;
+}
+
+body.inatel-tema .aula {
+    background-color: #0442BF;
+}
+
+body.inatel-tema .noticias {
+    background-color: #0477BF;
+}
+
+body.inatel-tema .card-noticia {
+    background-color: #0442BF;
+}
+
+.menu-tema {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 1000;
+    border: 1px solid #000;
+    background-color: #A3C8F7;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.menu-tema button {
+    padding: 8px 16px;
+    background-color: #0442BF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.menu-tema button:hover {
+    background-color: #033a94;
+}
+
+.botao-tema {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #0442BF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #033a94;
+}
