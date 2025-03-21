@@ -1,5 +1,3 @@
-<!-- O MENU OCULTO ESTÁ NO HAMBURGER MENU, NO CANTO SUPERIOR ESQUERDO-->
-
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -13,9 +11,9 @@
 <body>
     <div class="container">
         <header class="header">
-            <div class="icon menu-icon" id="menu-icon">&#9776;</div> <!-- Ícone de menu, solicitado -->
+            <div class="icon menu-icon" id="menu-icon">&#9776;</div> <!-- Ícone de menu -->
             <div class="logo">APP INATEL</div>
-            <div class="icon notification-icon">&#x1F514;</div> <!-- Ícone de notificação, solicitado -->
+            <div class="icon notification-icon">&#x1F514;</div> <!-- Ícone de notificação -->
         </header>
 
         <section class="mensagens">
@@ -31,12 +29,11 @@
                     <p>Sala e Horário</p>
                 </div>
                 <div class="aulaicons">
-                    <div class="icon">🎓</div> <!-- troquei ícones conforme solicitado -->
-                    <div class="icon">👨‍🏫</div> <!-- troquei ícones conforme solicitado -->
-                    <div class="icon">📅</div> <!-- troquei ícones conforme solicitado -->
+                    <div class="icon">🎓</div>
+                    <div class="icon">👨‍🏫</div>
+                    <div class="icon">📅</div>
                 </div>
             </div>
-
             <div class="aula">
                 <div>
                     <p>Disciplina</p>
@@ -48,7 +45,6 @@
                     <div class="icon">📅</div>
                 </div>
             </div>
-
             <div class="aula">
                 <div>
                     <p>Disciplina</p>
@@ -62,21 +58,25 @@
             </div>
         </main>
 
+        <!-- Carrossel de Notícias -->
         <section class="noticias">
-            <div class="card-noticia">
-                <h3>Card de Notícias</h3>
-                <p>Subtítulo</p>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <!-- Cards de eventos serão inseridos aqui dinamicamente -->
+                </div>
+                <button id="prevBtn">←</button>
+                <button id="nextBtn">→</button>
             </div>
         </section>
     </div>
 
-    <!-- botões de troca de perfil -->
+    <!-- Botões de troca de perfil -->
     <div class="menu-tema" id="menu-tema">
         <button id="inatel-botao">TEMA INATEL</button>
         <button id="dark-botao">TEMA DARK</button>
     </div>
 
-    <script src="script.js"></script> <!-- chama o script -->
+    <script src="script.js"></script>
 </body>
 
 </html>
