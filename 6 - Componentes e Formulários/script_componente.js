@@ -108,6 +108,31 @@ document.getElementById('nextBtn').addEventListener('click', () => moveCarousel(
 document.querySelector('.carousel-container').addEventListener('mouseenter', stopAutoSlide);
 document.querySelector('.carousel-container').addEventListener('mouseleave', startAutoSlide);
 
+// Função para definir a cor da nota
+function definirCorNota(nota) {
+    if (nota < 6) return 'nota-vermelha';
+    if (nota >= 6 && nota < 8) return 'nota-laranja';
+    return 'nota-verde';
+}
+
+// Carregar dados do JSON e aplicar estilos nas notas
+fetch('aulas.json')
+    .then(response => response.json())
+    .then(aulas => {
+        aulas.forEach(aula => {
+            let divNota = document.createElement('div');
+            divNota.classList.add('lable-nota', definirCorNota(aula.nota));
+            divNota.textContent = `Nota: ${aula.nota}`;
+
+            // Encontrar o local correto para adicionar a nota (ajuste conforme sua estrutura)
+            let aulasContainer = document.querySelector('.aulas');
+            if (aulasContainer) {
+                aulasContainer.appendChild(divNota);
+            }
+        });
+    })
+    .catch(error => console.error('Erro ao carregar o JSON:', error));
+
 // Chama a função para criar os cards de notícias ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
     criarCardsDeNoticias();
