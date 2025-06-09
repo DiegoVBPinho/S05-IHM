@@ -41,14 +41,14 @@
     </header>
 
     <section class="mensagens">
-        <h1>Olá Aluno!</h1>
+        <h1>Olá, Aluno!</h1>
         <div class="slider-aviso">
             <div class="aviso">
-                <i class="fas fa-box"></i>
+                <i class="fas fa-cube"></i> <!-- armário reservado -->
                 <p>Você possui um armário reservado com entrega para hoje...</p>
             </div>
             <div class="aviso">
-                <i class="fas fa-dollar-sign"></i>
+                <i class="fas fa-money-bill-wave"></i> <!-- pendência financeira -->
                 <p>Você possui uma pendência no financeiro...</p>
             </div>
         </div>
@@ -90,10 +90,55 @@
                     </div>
                     <p id="nomemonitor">**Nome do Monitor: Rafael Santos Pereira - Valor R$50,00.
                     </p>
-                    <button onclick="Contratar_Monitoria()" id="contratar">Contratar Monitoria</button>
+                    <button class="botao-contratar" data-aula="Cálculo I" data-sala="18 - Prédio I"
+                        data-data="09/06/2025" data-hora="14:00" data-monitor="Rafael Santos Pereira"
+                        data-valor="50,00">Contratar Monitoria</button>
 
                 </div>
             </article>
+
+            </article>
+
+            <!-- NOVA DISCIPLINA -->
+            <article class="disciplina">
+                <h2>Disciplina: M10 - Lógica de Programação.</h2>
+                <div class="icones">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM12 11.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
+                        <p>Sala: Sala 22, Prédio II</p>
+                    </div>
+
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.89-1.99 2L3 20c0 1.11.89 2 2 2h14c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 16H5V9h14v11z" />
+                        </svg>
+                        <p>Data: 11/06/25</p>
+                    </div>
+
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M12 20c4.41 0 8-3.59 8-8s-3.59-8-8-8-8 3.59-8 8 3.59 8 8 8zm0-14c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6 2.69-6 6-6zm.5 3h-1v4l3.25 1.95.75-1.23-2.5-1.42V9z" />
+                        </svg>
+                        <p>Hora: 10:00</p>
+                    </div>
+
+                    <p id="nomemonitor">**Nome do Monitor: Camila Rodrigues Silva - Valor R$60,00.</p>
+                    <button class="botao-contratar" data-aula="Lógica de Programação" data-sala="22 - Prédio II"
+                        data-data="11/06/2025" data-hora="10:00" data-monitor="Camila Rodrigues Silva"
+                        data-valor="60,00">Contratar Monitoria</button>
+
+                </div>
+            </article>
+        </section>
+
         </section>
 
 

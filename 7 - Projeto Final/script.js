@@ -137,19 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         iconSpan.textContent = isDark ? 'light_mode' : 'dark_mode';
     });
 
-    const mensagensSection = document.querySelector('.mensagens h1');
-    const nomeUsuario = "Aluno";
-    const hora = new Date().getHours();
-    let saudacao;
-    if (hora >= 5 && hora < 12) {
-        saudacao = "Bom dia";
-    } else if (hora >= 12 && hora < 18) {
-        saudacao = "Boa tarde";
-    } else {
-        saudacao = "Boa noite";
-    }
-    mensagensSection.textContent = `${saudacao}, ${nomeUsuario}!`;
-
+    // Avisos em slider
     const avisos = document.querySelectorAll('.slider-aviso .aviso');
     let index = 0;
     function mostrarAviso(i) {
@@ -162,6 +150,65 @@ document.addEventListener('DOMContentLoaded', () => {
         index = (index + 1) % avisos.length;
         mostrarAviso(index);
     }, 4000);
+
+    // Botões de contratar monitoria
+    const botoesMonitoria = document.querySelectorAll(".botao-contratar");
+
+    botoesMonitoria.forEach(botao => {
+        botao.addEventListener("click", () => {
+            const aula = botao.dataset.aula;
+            const sala = botao.dataset.sala;
+            const data = botao.dataset.data;
+            const hora = botao.dataset.hora;
+            const monitor = botao.dataset.monitor;
+            const valor = botao.dataset.valor;
+
+            const confirmBtn = document.getElementById("confirmBtn");
+            const botoesConfirmacao = document.getElementById("botoesConfirmacao");
+            const botoesFechar = document.getElementById("botoesFechar");
+
+            if (botao.classList.contains("contratado")) {
+                // Já contratado: exibir resumo
+                botoesConfirmacao.classList.add("hidden");
+                botoesFechar.classList.remove("hidden");
+
+                const resumo = `
+                    <strong>Monitoria já contratada:</strong><br>
+                    📚 Aula: ${aula}<br>
+                    🏫 Sala: ${sala}<br>
+                    📅 Data: ${data}<br>
+                    ⏰ Hora: ${hora}<br>
+                    👨‍🏫 Monitor: ${monitor}<br>
+                    💵 Valor: R$${valor}<br><br>
+                    Obs: Parte deste valor é destinado ao Inatel.
+                `;
+                showCustomAlert(resumo, true);
+                return;
+            }
+
+            // Fluxo normal de contratação
+            botoesFechar.classList.add("hidden");
+            botoesConfirmacao.classList.remove("hidden");
+
+            showCustomAlert("Deseja realmente contratar o monitor?");
+
+            const newConfirmBtn = confirmBtn.cloneNode(true);
+            confirmBtn.parentNode.replaceChild(newConfirmBtn, confirmBtn);
+
+            newConfirmBtn.addEventListener("click", () => {
+                botao.textContent = "Monitor Contratado";
+                botao.classList.add("contratado");
+                botao.style.backgroundColor = "#4CAF50";
+                botao.style.color = "white";
+
+                closeAlert();
+
+                alert(
+                    `Monitor contratado com sucesso!\n\n📚 Aula: ${aula}\n🏫 Sala: ${sala}\n📅 Data: ${data}\n⏰ Hora: ${hora}\n👨‍🏫 Monitor: ${monitor}\n💵 Valor: R$${valor}\n\nObs: Parte deste valor é destinado ao Inatel.`
+                );
+            });
+        });
+    });
 });
 
 // Modal
@@ -181,53 +228,4 @@ function showCustomAlert(message, isHtml = false) {
 function closeAlert() {
     const alertBox = document.getElementById("customAlert");
     alertBox.classList.add("hidden");
-}
-
-function Contratar_Monitoria() {
-    const botao = document.getElementById("contratar");
-    const confirmBtn = document.getElementById("confirmBtn");
-    const botoesConfirmacao = document.getElementById("botoesConfirmacao");
-    const botoesFechar = document.getElementById("botoesFechar");
-
-    if (!botao) {
-        showCustomAlert("Botão não encontrado!");
-        return;
-    }
-
-    if (monitorContratado) {
-        // Mostrar apenas dados e botão Fechar
-        botoesConfirmacao.classList.add("hidden");
-        botoesFechar.classList.remove("hidden");
-
-        showCustomAlert(`
-            <b>Confirmação de Contrato:</b><br>
-            📚 <b>Aula:</b> Cálculo I<br>
-            🏫 <b>Sala:</b> 18 - Prédio I<br>
-            📅 <b>Data:</b> 09/06/2025<br>
-            ⏰ <b>Hora:</b> 14:00<br>
-            👨‍🏫 <b>Monitor:</b> Rafael Santos Pereira<br>
-            💵 <b>Valor:</b> R$50,00<br><br>
-            <small>Obs: Parte deste valor é destinado ao Inatel.</small>
-        `, true);
-        return;
-    }
-
-    // Se ainda não foi contratado → perguntar
-    botoesFechar.classList.add("hidden");
-    botoesConfirmacao.classList.remove("hidden");
-
-    showCustomAlert("Deseja realmente contratar o monitor?");
-
-    const newConfirmBtn = confirmBtn.cloneNode(true);
-    confirmBtn.parentNode.replaceChild(newConfirmBtn, confirmBtn);
-
-    newConfirmBtn.addEventListener("click", () => {
-        monitorContratado = true;
-        botao.innerHTML = "Já foi contratado.";
-        closeAlert();
-
-        alert(
-            "Monitor contratado com sucesso!\n\n📚 Aula: Cálculo I\n🏫 Sala: 18 - Prédio I\n📅 Data: 09/06/2025\n⏰ Hora: 14:00\n👨‍🏫 Monitor: Rafael Santos Pereira\n💵 Valor: R$50,00\n\nObs: Parte deste valor é destinado ao Inatel."
-        );
-    });
 }

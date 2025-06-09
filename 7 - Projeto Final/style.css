@@ -441,3 +441,57 @@ body.dark-theme footer {
         transform: scale(1);
     }
 }
+
+#contratar.contratado {
+    background-color: #4CAF50;
+    /* Verde padrão */
+    color: white;
+    cursor: default;
+}
+
+.disciplina {
+    margin-bottom: 16px;
+    /* ou 24px se quiser mais espaço */
+}
+
+.botao-contratar {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao-contratar.contratado {
+    background-color: #4CAF50;
+    /* verde */
+    color: white;
+}
+
+.alert-content p,
+#alertMessage {
+    color: #003366;
+    /* Ou use var(--text-color-light) se quiser manter consistência */
+    font-weight: 500;
+}
+
+.theme-dark .alert-content p,
+.theme-dark #alertMessage {
+    color: #ffffff;
+}
+
+#customAlert #alertMessage {
+    color: #003366;
+    /* Ou white se preferir no modo escuro */
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.theme-dark #customAlert #alertMessage {
+    color: white;
+}
