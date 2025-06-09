@@ -495,3 +495,18 @@ body.dark-theme footer {
 .theme-dark #customAlert #alertMessage {
     color: white;
 }
+
+.theme-dark #customAlert .alert-content {
+    background-color: #1f2f40;
+    /* ou qualquer tom escuro da sua paleta */
+    color: white;
+}
+
+.theme-dark #customAlert .alert-content button {
+    background-color: var(--button-color);
+    color: white;
+}
+
+.theme-dark #customAlert .alert-content button:hover {
+    background-color: var(--button-hover-color);
+}
